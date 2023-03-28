@@ -24,7 +24,7 @@ int search_intervals(time_of_day t, const interval a[], int n, interval &u)
                 u.end = a[i].end;
         }
     }
-    
+
     int u_range = time_to_int(u.end) - time_to_int(u.start);
     if (first_flag)
     {
@@ -36,15 +36,52 @@ int search_intervals(time_of_day t, const interval a[], int n, interval &u)
 
 int main()
 {
-    const int n = 5;
-    const time_of_day t = {15, 15};
-    const interval a[n]{{{12, 30}, {14, 30}},
-                        {{14, 30}, {15, 30}},
-                        {{15, 10}, {16, 10}},
-                        {{9, 30}, {15, 15}},
-                        {{9, 45}, {15, 16}}};
-    interval u;
-    int d = search_intervals(t, a, n, u);
-    cout << d << ' ' << u << '\n';
+    {
+        const int n = 1;
+        const time_of_day t = {13, 00};
+        const interval a[n]{{{12, 30}, {14, 30}}};
+        interval u;
+        int d = search_intervals(t, a, n, u);
+        cout << d << ' ' << u << '\n';
+    }
+    {
+        const int n = 2;
+        const time_of_day t = {14, 30};
+        const interval a[n]{{{12, 30}, {14, 30}},
+                            {{14, 30}, {15, 30}}};
+        interval u;
+        int d = search_intervals(t, a, n, u);
+        cout << d << ' ' << u << '\n';
+    }
+    {
+        const int n = 2;
+        const time_of_day t = {12, 30};
+        const interval a[n]{{{12, 30}, {14, 30}},
+                            {{14, 30}, {15, 30}}};
+        interval u;
+        int d = search_intervals(t, a, n, u);
+        cout << d << ' ' << u << '\n';
+    }
+    {
+        const int n = 2;
+        const time_of_day t = {15, 30};
+        const interval a[n]{{{12, 30}, {14, 30}},
+                            {{14, 30}, {15, 30}}};
+        interval u;
+        int d = search_intervals(t, a, n, u);
+        cout << d << ' ' << u << '\n';
+    }
+    {
+        const int n = 5;
+        const time_of_day t = {15, 15};
+        const interval a[n]{{{12, 30}, {14, 30}},
+                            {{14, 30}, {15, 30}},
+                            {{15, 10}, {16, 10}},
+                            {{9, 30}, {15, 15}},
+                            {{9, 45}, {15, 16}}};
+        interval u;
+        int d = search_intervals(t, a, n, u);
+        cout << d << ' ' << u << '\n';
+    }
     return 0;
 }

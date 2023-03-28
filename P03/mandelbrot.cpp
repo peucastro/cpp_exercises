@@ -26,8 +26,35 @@ void mandelbrot(const complex &c, unsigned int n, complex &z_n)
 
 int main()
 {
-    complex z_n;
-    mandelbrot({0.1, 3.2}, 4, z_n);
-    cout << z_n << '\n';
+    {
+        complex z_n;
+        mandelbrot({1.2, 3.4}, 0, z_n);
+        cout << z_n << '\n';
+    }
+    {
+        complex z_n;
+        mandelbrot({1, 1}, 1, z_n);
+        cout << z_n << '\n';
+    }
+    {
+        complex z_n;
+        mandelbrot({1, 1}, 2, z_n);
+        cout << z_n << '\n';
+    }
+    {
+        complex z_n;
+        mandelbrot({-1.2, 0.4}, 7, z_n);
+        cout << z_n << '\n';
+    }
+    {
+        complex z_n;
+        mandelbrot({0.1, 3.2}, 4, z_n);
+        cout << z_n << '\n';
+    }
+    {
+        complex z_n;
+        mandelbrot({-1, 0}, 11, z_n);
+        cout << z_n << '\n';
+    }
     return 0;
 }

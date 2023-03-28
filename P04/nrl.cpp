@@ -39,9 +39,40 @@ int nrl(const char s[], char low[])
 
 int main()
 {
-    const char s[] = "The quick brown fox jumps over the lazy dog";
-    char l[27] = {-1};
-    int r = nrl(s, l);
-    cout << '\"' << s << "\" "
-         << r << " \"" << l << "\"\n";
+    {
+        const char s[] = "";
+        char l[27] = {-1};
+        int r = nrl(s, l);
+        cout << '\"' << s << "\" "
+             << r << " \"" << l << "\"\n";
+    }
+    {
+        const char s[] = "  F C U P  F E U P  Porto  ";
+        char l[27] = {-1};
+        int r = nrl(s, l);
+        cout << '\"' << s << "\" "
+             << r << " \"" << l << "\"\n";
+    }
+    {
+        const char s[] = " abC dEf GhI jKl MnO pQr StU vWx yZ ";
+        char l[27] = {-1};
+        int r = nrl(s, l);
+        cout << '\"' << s << "\" "
+             << r << " \"" << l << "\"\n";
+    }
+    {
+        const char s[] = " abC dEf GhI jKl MnO pQr StU vWx yZ ABc DeF gHi JkL mNo PqR sTu VwX Yz";
+        char l[27] = {-1};
+        int r = nrl(s, l);
+        cout << '\"' << s << "\" "
+             << r << " \"" << l << "\"\n";
+    }
+    {
+        const char s[] = "The quick brown fox jumps over the lazy dog";
+        char l[27] = {-1};
+        int r = nrl(s, l);
+        cout << '\"' << s << "\" "
+             << r << " \"" << l << "\"\n";
+    }
+    return 0;
 }

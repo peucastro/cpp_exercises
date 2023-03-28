@@ -25,7 +25,25 @@ const char *longest(const char *pa[])
 
 int main()
 {
-    const char *pa[] = {"C++", "Python", "Java", "C#", "Julia", "Rust", "Haskell", "Typescript", "OCaml", "Fortran", nullptr};
-    cout << "\"" << longest(pa) << "\"\n";
+    {
+        const char *pa[] = {"C++", nullptr};
+        cout << "\"" << longest(pa) << "\"\n";
+    }
+    {
+        const char *pa[] = {"", "0123", "Hello", "world", "!", nullptr};
+        cout << "\"" << longest(pa) << "\"\n";
+    }
+    {
+        const char *pa[] = {"Hello_world", "Hello", "Hello world", nullptr};
+        cout << "\"" << longest(pa) << "\"\n";
+    }
+    {
+        const char *pa[] = {"Hello world!", "Hello_world", "Hello world", nullptr};
+        cout << "\"" << longest(pa) << "\"\n";
+    }
+    {
+        const char *pa[] = {"C++", "Python", "Java", "C#", "Julia", "Rust", "Haskell", "Typescript", "OCaml", "Fortran", nullptr};
+        cout << "\"" << longest(pa) << "\"\n";
+    }
     return 0;
 }

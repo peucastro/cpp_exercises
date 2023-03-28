@@ -86,5 +86,10 @@ unsigned long hstr_to_integer(const char hstr[])
 
 int main()
 {
+    cout << hstr_to_integer("0");
+    cout << hstr_to_integer("A");
+    cout << hstr_to_integer("19");
+    cout << hstr_to_integer("fF");
     cout << hstr_to_integer("CafeBabe2022") << endl;
+    return 0;
 }

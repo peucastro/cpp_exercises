@@ -33,8 +33,53 @@ void trim(char s[])
 
 int main()
 {
+    {
+    char s[] = " abc! def? ";
+    cout << "\"" << s << "\" => ";
+    trim(s);
+    cout << "\"" << s << "\"\n";
+    }
+    {
+    char s[] = "#abc";
+    cout << "\"" << s << "\" => ";
+    trim(s);
+    cout << "\"" << s << "\"\n";
+    }
+    {
+    char s[] = "    abc def";
+    cout << "\"" << s << "\" => ";
+    trim(s);
+    cout << "\"" << s << "\"\n";
+    }
+    {
+    char s[] = "abc def.   ";
+    cout << "\"" << s << "\" => ";
+    trim(s);
+    cout << "\"" << s << "\"\n";
+    }
+    {
+    char s[] = "   ";
+    cout << "\"" << s << "\" => ";
+    trim(s);
+    cout << "\"" << s << "\"\n";
+    }
+    {
+    char s[] = "";
+    cout << "\"" << s << "\" => ";
+    trim(s);
+    cout << "\"" << s << "\"\n";
+    }
+    {
     char s[] = " abc  _  def  _  ghi ";
     cout << "\"" << s << "\" => ";
     trim(s);
     cout << "\"" << s << "\"\n";
+    }
+    {
+    char s[] = "a           ";
+    cout << "\"" << s << "\" => ";
+    trim(s);
+    cout << "\"" << s << "\"\n";
+    }
+    return 0;
 }

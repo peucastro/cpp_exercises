@@ -1,47 +1,82 @@
 #include <iostream>
 using namespace std;
 
-int array_size(const char arr[])
+void int_to_str(int n, char str[], int &pos)
 {
-    int size = 0;
-    while (arr[size] != '\0')
-        size++;
-    return size;
+    int d = 0;
+    for (int i = n; i != 0; i = i / 10)
+    {
+        d++;
+    }
+    for (int i = d, j = n; i > 0; i--)
+    {
+        str[pos + i - 1] = '0' + j % 10;
+        j = j / 10;
+    }
+    pos = pos + d;
 }
 
-int diff_chars(const char str[])
+void rle_encodeAux(int n, char c, char rle[], int &pos)
 {
-    int count = 0;
-    for (int i = 0; i < array_size(str); i++)
+    if (n == 0)
     {
-        while (str[i] == str[i+1])
-            count++;
+        return;
     }
-    return count;
+    int_to_str(n, rle, pos);
+    rle[pos] = c;
+    pos++;
 }
 
 void rle_encode(const char str[], char rle[])
 {
-    int count = 0;
-    int str_index = 0;
-    int rle_index = 0;
-
-    for (int i = 0; i < diff_chars(str); i++)
+    int i = 0;
+    int j = 0;
+    char c = 0;
+    int n = 0;
+    while (str[i] != '\0')
     {
-        while (str[str_index] == str[str_index + 1])
-            count++;
-
-        rle[rle_index] = count;
-        rle[rle_index + 1] = str[i];
-        rle_index += 2;
-        count = 0;
-        str_index = count;
+        if (str[i] == c)
+        {
+            n++;
+        }
+        else
+        {
+            rle_encodeAux(n, c, rle, j);
+            n = 1;
+            c = str[i];
+        }
+        i++;
     }
+    rle_encodeAux(n, c, rle, j);
+    rle[j] = '\0';
 }
 
 int main()
 {
-    char rle[10 + 1] = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
-    rle_encode("abcde", rle);
-    cout << rle << endl;
+    {
+        char rle[1] = {-1};
+        rle_encode("", rle);
+        cout << rle << endl;
+    }
+    {
+        char rle[2 + 1] = {-1, -1, -1};
+        rle_encode("a", rle);
+        cout << rle << endl;
+    }
+    {
+        char rle[10 + 1] = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+        rle_encode("abcde", rle);
+        cout << rle << endl;
+    }
+    {
+        char rle[9 + 1] = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+        rle_encode("aaaaabbbbbbbbbbbcccd", rle);
+        cout << rle << endl;
+    }
+    {
+        char rle[3 + 1] = {-1, -1, -1, -1};
+        rle_encode("xxxxxxxxxxxxxxxxxxxx", rle);
+        cout << rle << endl;
+    }
+    return 0;
 }

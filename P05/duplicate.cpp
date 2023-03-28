@@ -25,8 +25,25 @@ char *duplicate(const char s[])
 
 int main()
 {
-    char *s = duplicate("0123 456 789 @ abc");
-    cout << "\"" << s << "\"\n";
-    delete[] s;
+    {
+        char *s = duplicate("");
+        cout << "\"" << s << "\"\n";
+        delete[] s;
+    }
+    {
+        char *s = duplicate("a");
+        cout << "\"" << s << "\"\n";
+        delete[] s;
+    }
+    {
+        char *s = duplicate("C++");
+        cout << "\"" << s << "\"\n";
+        delete[] s;
+    }
+    {
+        char *s = duplicate("0123 456 789 @ abc");
+        cout << "\"" << s << "\"\n";
+        delete[] s;
+    }
     return 0;
 }

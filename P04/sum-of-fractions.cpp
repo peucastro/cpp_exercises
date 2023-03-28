@@ -47,8 +47,36 @@ fraction sum(const fraction fa[], int n)
 
 int main()
 {
-    const int n = 5;
-    const fraction fa[n]{{0, 1}, {1, 2}, {-2, 3}, {3, 4}, {-4, 5}};
-    cout << sum(fa, n) << '\n';
+    {
+        const int n = 1;
+        const fraction fa[n]{{1, 2}};
+        cout << sum(fa, n) << '\n';
+    }
+    {
+        const int n = 2;
+        const fraction fa[n]{{1, 2}, {-1, 3}};
+        cout << sum(fa, n) << '\n';
+    }
+
+    {
+        const int n = 3;
+        const fraction fa[n]{{1, 2}, {-1, 3}, {-3, 4}};
+        cout << sum(fa, n) << '\n';
+    }
+    {
+        const int n = 4;
+        const fraction fa[n]{{-1, 4}, {1, 2}, {-1, 8}, {-1, 8}};
+        cout << sum(fa, n) << '\n';
+    }
+    {
+        const int n = 5;
+        const fraction fa[n]{{0, 1}, {1, 2}, {-2, 3}, {3, 4}, {-4, 5}};
+        cout << sum(fa, n) << '\n';
+    }
+    {
+        const int n = 6;
+        const fraction fa[n]{{133, 60}, {0, 1}, {1, 2}, {-2, 3}, {3, 4}, {-4, 5}};
+        cout << sum(fa, n) << '\n';
+    }
     return 0;
 }

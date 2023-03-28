@@ -28,9 +28,35 @@ int solve_eq(int a, int b, int c, double &x1, double &x2)
 
 int main()
 {
-    double x1, x2;
-    int r = solve_eq(3, 4, -2, x1, x2);
-    cout << fixed << setprecision(7)
-         << r << ' ' << x1 << ' ' << x2 << '\n';
+    {
+        double x1, x2;
+        int r = solve_eq(1, 1, 0, x1, x2);
+        cout << fixed << setprecision(7)
+             << r << ' ' << x1 << ' ' << x2 << '\n';
+    }
+    {
+        double x1, x2;
+        int r = solve_eq(1, -2, 1, x1, x2);
+        cout << fixed << setprecision(7)
+             << r << ' ' << x1 << ' ' << x2 << '\n';
+    }
+    {
+        double x1, x2;
+        int r = solve_eq(1, 1, 1, x1, x2);
+        cout << fixed << setprecision(7)
+             << r << ' ' << x1 << ' ' << x2 << '\n';
+    }
+    {
+        double x1, x2;
+        int r = solve_eq(1, -1, 0, x1, x2);
+        cout << fixed << setprecision(7)
+             << r << ' ' << x1 << ' ' << x2 << '\n';
+    }
+    {
+        double x1, x2;
+        int r = solve_eq(3, 4, -2, x1, x2);
+        cout << fixed << setprecision(7)
+             << r << ' ' << x1 << ' ' << x2 << '\n';
+    }
     return 0;
 }
