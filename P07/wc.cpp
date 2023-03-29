@@ -16,8 +16,6 @@ wcresult wc(const string &filename)
         while (word >> input)
             ans.words++;
     }
-
-    file.close();
     return ans;
 }
 
