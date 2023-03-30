@@ -6,7 +6,6 @@ using namespace std;
 template <typename T>
 string to_lower(T str)
 {
-    string lower;
     for (char &c : str)
         lower.push_back(tolower(c));
     return lower;
@@ -25,7 +24,6 @@ int count(const string &fname, const string &word)
             count++;
         }
     }
-    file.close();
     return count;
 }
 
