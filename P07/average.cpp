@@ -10,11 +10,10 @@ double average(const string &fname)
     double num, sum, count;
     sum = count = 0;
 
-    while (true)
+    while (!in.eof())
     {
-        if (in.eof())
-            break;
-        else if (in >> num)
+
+        if (in >> num)
         {
             sum += num;
             count++;

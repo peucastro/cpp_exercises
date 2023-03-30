@@ -7,24 +7,14 @@ void maximum(const string &input_fname, const string &output_fname)
 
     double x;
     int count = 0;
-    bool flag = true;
-    double max;
+    double max = -1000;
 
     while (in >> x)
     {
         out << fixed << setprecision(3) << x << endl;
         count++;
-
-        if (flag)
-        {
+        if (x > max)
             max = x;
-            flag = false;
-        }
-        else
-        {
-            if (x > max)
-                max = x;
-        }
     }
 
     out << "count=" << count << "/max=" << max << endl;
