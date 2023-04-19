@@ -1,23 +1,9 @@
-#include <iostream>
-#include <string>
 #include <vector>
+#include <string>
 #include <sstream>
-#include <fstream>
 using namespace std;
-
-class Person
-{
-public:
-    Person(const string &name, const string &address, const string &phone);
-    string get_name() const;
-    string get_address() const;
-    string get_phone() const;
-
-private:
-    string name_;    // Name
-    string address_; // Address
-    string phone_;   // Phone
-};
+#include <fstream>
+#include "Person.h"
 
 Person::Person(const string &name, const string &address, const string &phone)
 {
@@ -39,18 +25,6 @@ string Person::get_address() const
 string Person::get_phone() const
 {
     return phone_;
-}
-
-void show_persons_data(const vector<Person> &persons)
-{
-    cout << "[\n";
-    for (const auto &p : persons)
-    {
-        cout << "  " << p.get_name()
-             << " : " << p.get_address()
-             << " : " << p.get_phone() << '\n';
-    }
-    cout << "]\n";
 }
 
 void read_persons_data(const string &file_name, vector<Person> &persons)
