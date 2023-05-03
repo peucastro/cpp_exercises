@@ -6,11 +6,9 @@ void replace(const map<char, char> &r, string &s)
 {
     for (char &c : s)
     {
-        for (auto p : r)
-        {
-            if (c == p.first)
-                c = p.second;
-        }
+        auto itr = r.find(c);
+        if (itr != r.end())
+            c = itr->second;
     }
 }
 

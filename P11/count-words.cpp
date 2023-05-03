@@ -28,18 +28,12 @@ void count_words(const string &str, map<string, size_t> &count)
     while (input >> word)
     {
         to_lower(word);
-        bool find = false;
+        auto itr = count.find(word);
 
-        for (auto &p : count)
-        {
-            if (p.first == word)
-            {
-                p.second++;
-                find = true;
-            }
-        }
-        if (!find)
+        if (itr == count.end())
             count.insert(pair<string, size_t>(word, 1));
+        else
+            itr->second++;
     }
 }
 
