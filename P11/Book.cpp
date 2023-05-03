@@ -56,20 +56,14 @@ void Book::build_index(const set<string> &words)
                 {
                     if (w == word)
                     {
-                        bool find = false;
-                        for (auto &p : index_)
-                        {
-                            if (p.first == word)
-                            {
-                                find = true;
-                                p.second.insert(curr_page);
-                            }
-                        }
-                        if (!find)
+                        auto itr = index_.find(word);
+                        if (itr == index_.end())
                         {
                             std::pair<std::string, std::set<size_t>> new_pair(word, {curr_page});
                             index_.insert(new_pair);
                         }
+                        else
+                            itr->second.insert(curr_page);
                     }
                 }
             }

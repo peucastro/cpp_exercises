@@ -7,7 +7,6 @@
 #include <set>
 #include "Book.h"
 #include "Page.h"
-
 using namespace std;
 
 void Book::build_index(const set<string> &words)
