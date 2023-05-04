@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <ostream>
 #include <iomanip>
 #include "Date.h"
 using namespace std;
